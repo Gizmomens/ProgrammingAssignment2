@@ -1,14 +1,45 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## THis functions creates the required special object
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) 
+{
+        
+        i <- NULL
+        
+        set <- function(matrix)
+        {
+                x <- matrix
+                i <- NULL
+        }
+        
+        get <- function()
+        {
+                x
+        }
+        
+        setInverse <- function(inv) 
+        {
+                i <<- inv
+        }
+
+  
+        getInverse <- function() 
+        {
+                
+                i
+        }
+
+        ## Return LIST
+        list(set = set, get = get,
+         setInverse = setInverse,
+         getInverse = getInverse)
 
 }
 
 
-## Write a short comment describing this function
+## Calculates the inverse of the matrix but checks to see if it's already been calculated before
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
